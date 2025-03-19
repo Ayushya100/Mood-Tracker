@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page Container */
+.container {
+    min-height: 100vh;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .container-content {
+    /* height: 99vh; */
+    height: 100%;
+    width: 90%;
+    color: whitesmoke;
+}
+
+/* Navbar */
+.container-content .title {
+    font-weight: 600;
+    font-size: 28px;
+    margin-top: 10px;
+    color: #FFBF00;
+}
+
+/* Emoji Form Container */
+.container-content .form-container {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-content .form-container .register-card {
+    flex: 2;
+}
+
+.container-content .form-container .register-card .mood-header {
+    font-size: 36px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.container-content .form-container .register-card .mood-container {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.container-content .form-container .register-card .mood-container li {
+    width: calc(100% / 6);
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 15px 10px;
+    padding: 10px 5px;
+    border-radius: 20px;
+    background: linear-gradient(315deg, #202020, #222222);
+    box-shadow:  -1px -1px 0px #121212,
+            1px 1px 0px #353535;
+    cursor: pointer;
+}
+
+.container-content .form-container .register-card .mood-container li.inactive {
+    color: whitesmoke;
+}
+
+.container-content .form-container .register-card .mood-container li.active {
+    background: #FFBF00;
+    color: #0f0f0f;
+    font-weight: 600;
+}
+
+.container-content .form-container .register-card .mood-container li:not(.active):hover::before {
+    color: whitesmoke;
+}
+
+.container-content .form-container .register-card .mood-message {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.container-content .form-container .register-card .mood-footer {
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Calendar View Container */
+.container-content .form-container .calendar-container {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 5px;
+    width: 30%;
+}
+
+.calendar-container .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.calendar-container .calendar-header .calendar-navigation {
+    display: flex;
+}
+
+.calendar-container .calendar-header .calendar-navigation span {
+    height: 38px;
+    width: 38px;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+    user-select: none;
+    color: #aeabab;
+    font-size: 1.9rem;
+}
+
+.calendar-container .calendar-header .calendar-navigation span:last-child {
+    margin-right: -10px;
+}
+
+.calendar-container .calendar-header .calendar-navigation span:hover {
+    background: #363636;
+    cursor: pointer;
+}
+
+.calendar-container .calendar-header .calendar-header-text {
+    font-weight: 500;
+    font-size: 1.45rem;
+}
+
+.calendar-container .calendar-body {
+    padding: 5px;
+}
+
+.calendar-container .calendar-body ul {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.calendar-container .calendar-body .calendar-dates {
+    margin-bottom: 20px;
+}
+
+.calendar-container .calendar-body li {
+    width: calc(100% / 7);
+    font-size: 1.07rem;
+    color: #bbbbbb;
+}
+
+.calendar-container .calendar-body .calendar-weekdays li {
+    cursor: default;
+    font-weight: 500;
+}
+
+.calendar-container .calendar-body .calendar-dates li {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.calendar-container .calendar-body .calendar-dates li.deactive {
+    color: #777777;
+    cursor: not-allowed;
+}
+
+.calendar-container .calendar-body .calendar-dates li.inactive {
+    color: #c7c7c7;
+    cursor: pointer;
+}
+
+.calendar-container .calendar-body .calendar-dates li.active {
+    color: #0f0f0f;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calendar-container .calendar-body .calendar-dates li::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calendar-container .calendar-body .calendar-dates li.active::before {
+    background: #FFBF00;
+    color: #202020;
+}
+
+.calendar-container .calendar-body .calendar-dates li:not(.active):hover::before {
+    background: #3f3f3f;
+}
+
+/* User Mood Summary Report */
+.container .container-content .footer {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.container .container-content .footer-dropdown-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.container .container-content .footer-dropdown-container .report-header {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.container .container-content .footer-dropdown-container .report-filter {
+    position: relative;
+    display: inline-block;
+}
+
+.container .container-content .footer-dropdown-container .report-filter .dropdown-btn {
+    background: #FFBF00;
+    color: #0f0f0f;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    width: 120px;
+}
+
+.container .container-content .footer-dropdown-container .report-filter .dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    );
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    min-width: 120px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: auto;
+    z-index: 1;
+}
+
+.container .container-content .footer-dropdown-container .report-filter .dropdown-content a {
+    color: whitesmoke;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    transition: cubic-bezier(1, 0, 0, 1);
+    cursor: pointer;
+}
+
+.container .container-content .footer-dropdown-container .report-filter .dropdown-content a:hover {
+    background-color: #0000005c;
+}
+
+.container .container-content .footer-dropdown-container .report-filter .show {
+    display: block;
+}
+
+.container-content .footer .footer-report {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.container-content .footer .footer-report li {
+    width: calc(99% / 3);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(21px);
+    -webkit-backdrop-filter: blur(21px);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.container-content .footer .footer-report li .record-left {
+    flex: 2;
+}
+
+.container-content .footer .footer-report li .record-left .record-title {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+}
+
+.container-content .footer .footer-report li .record-left .record-date {
+    font-size: 1.1rem;
+}
+
+.container-content .footer .footer-report li .record-right {
+    text-align: center;
+}
+
+.container-content .footer .footer-report li .record-right .record-mood-emoji {
+    font-size: 2rem;
+}
+
+.container-content .footer .footer-report li .record-right .record-mood-dtl {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Response queries */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .container-content .form-container .register-card .mood-header {
+        font-size: 28px;
+    }
+    .container-content .form-container .calendar-container {
+        width: 45%;
+    }
+    .container-content .form-container .register-card .mood-container li {
+        width: calc(100% / 3);
+    }
+    .container .container-content .footer-dropdown-container .report-header {
+        font-size: 24px;
+    }
+    .container .container-content .footer-dropdown-container .report-filter .dropdown-btn {
+        font-size: 12px;
+    }
+    .container .container-content .footer-dropdown-container .report-filter .dropdown-content a {
+        font-size: 12px;
+    }
+    .container-content .footer .footer-report li {
+        width: calc(98% / 3);
+    }
+    .container-content .footer .footer-report li .record-left .record-date {
+        font-size: 1rem;
+    }
+    .container-content .footer .footer-report li .record-right .record-mood-emoji {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-device-width: 640px) {
+    .container-content .title {
+        font-size: 24px;
+    }
+    .container-content .form-container {
+        display: block;
+    }
+    .container-content .form-container .register-card .mood-header {
+        font-size: 18px;
+    }
+    .container-content .form-container .register-card .mood-footer {
+        margin-bottom: 20px;
+    }
+    .container-content .form-container .calendar-container {
+        width: 100%;
+    }
+    .calendar-container .calendar-header .calendar-navigation span {
+        font-size: 1.2rem;
+    }
+    .calendar-container .calendar-header .calendar-header-text {
+        font-size: 1.2rem;
+    }
+    .calendar-container .calendar-body li {
+        font-size: 0.9rem;
+    }
+    .container-content .form-container .register-card .mood-container li {
+        width: calc(80% / 3);
+        margin: 10px;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container .container-content .footer-dropdown-container .report-header {
+        font-size: 18px;
+    }
+    .container .container-content .footer-dropdown-container .report-filter .dropdown-btn {
+        font-size: 12px;
+    }
+    .container .container-content .footer-dropdown-container .report-filter .dropdown-content a {
+        font-size: 12px;
+    }
+    .container-content .footer .footer-report li {
+        width: calc(100% / 1);
+    }
+    .container-content .footer .footer-report li .record-left .record-date {
+        font-size: 1rem;
+    }
+    .container-content .footer .footer-report li .record-right .record-mood-emoji {
+        font-size: 1rem;
+    }
+}
