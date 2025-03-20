@@ -30,7 +30,7 @@ const moodsMessage = {
     'Crazy': 'Feeling wild today? Embrace the fun and let your energy shine!'
 };
 
-const updateMoodMessage = 'You can change your mood selection';
+const updateMoodMessage = 'You can change your mood selection anytime!';
 
 // Dropdown options
 const options = [
@@ -167,6 +167,20 @@ const loadMoodsReport = (numOfDays) => {
     // Before loading the records in report build the record in structured format
     for (let dateIndex = 0; dateIndex < numOfDays; dateIndex++) {
         const dateToAdd = new Date(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate() - dateIndex);
+
+        // Structure to Build
+        /*
+            <li>
+                <div class="record-left">
+                    <p class="record-title"></p>
+                    <p class="record-date"></p>
+                    </div>
+                <div class="record-right">
+                    <p class="record-mood"></p>
+                    <p class="record-mood-dtl"></p>
+                </div>
+            </li>
+        */
 
         // The 'Record Date' title and date to be kept on left side of a block
         const liRecord = document.createElement('li');
