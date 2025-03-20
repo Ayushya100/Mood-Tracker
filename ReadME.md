@@ -11,10 +11,12 @@ Last 7 days
 Last 15 days
 Last 30 days
 Last 45 days
+- **Manual Selection** - You can view mood selections beyond the last 45 days by manually selecting a specific date in the calendar. This allows you to revisit and analyze mood entries from earlier dates easily.
 ## How it Works
 - Jump In & Log your Mood - Select an emoji that matches your feeling and save it for the chosen date.
 - Modify Anytime - Want to update your past mood entries? No Problem, just pick up the relevant date and select a new mood that you feel.
 - Track your Emotions - Generate the insightful reports to see how your mood has fluctuated over time.
+- Refresh Report - To load the latest selected moods, simply re-select the report generation option. This ensures that the report reflects the most up-to-date data. Auto reload of report is not enabled.
 ## Screenshots
 Here's how the app looks:
 - Initial Home Page

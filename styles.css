@@ -26,8 +26,9 @@
 .container-content .title {
     font-weight: 600;
     font-size: 28px;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #FFBF00;
+    text-align: center;
 }
 
 /* Emoji Form Container */
@@ -97,14 +98,14 @@
     margin-top: 10px;
     margin-left: 20px;
     font-size: 1.05rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .container-content .form-container .register-card .mood-footer {
     margin-top: 15px;
     margin-left: 20px;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 /* Calendar View Container */
@@ -400,9 +401,16 @@
     }
     .container-content .form-container .register-card .mood-header {
         font-size: 18px;
+        margin-left: 5px;
+    }
+    .container-content .form-container .register-card .mood-message {
+        font-size: 14px;
+        margin-left: 5px;
     }
     .container-content .form-container .register-card .mood-footer {
+        font-size: 12px;
         margin-bottom: 20px;
+        margin-left: 5px;
     }
     .container-content .form-container .calendar-container {
         width: 100%;
@@ -417,7 +425,7 @@
         font-size: 0.9rem;
     }
     .container-content .form-container .register-card .mood-container li {
-        width: calc(80% / 3);
+        width: calc(79% / 3);
         margin: 10px;
         font-size: 0.8rem;
         display: flex;
@@ -432,6 +440,15 @@
     }
     .container .container-content .footer-dropdown-container .report-filter .dropdown-content a {
         font-size: 12px;
+        background: linear-gradient(
+            135deg,
+            #252525,
+            #252525
+        );
+        padding: 15px 12px;
+    }
+    .container .container-content .footer-dropdown-container .report-filter .dropdown-content a:hover {
+        background-color: #252525;
     }
     .container-content .footer .footer-report li {
         width: calc(100% / 1);
